@@ -1,0 +1,17 @@
+// Apply the java-library plugin to add support for Java Library
+apply plugin: 'java-library'
+apply plugin: 'application'
+
+mainClassName = "is.ru.tictac.TicTac"
+
+
+repositories {
+    // Use jcenter for resolving your dependencies.
+    jcenter()
+}
+
+dependencies {
+
+    // Use JUnit test framework
+    testImplementation 'junit:junit:4.12'
+}
