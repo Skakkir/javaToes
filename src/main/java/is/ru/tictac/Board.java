@@ -20,4 +20,13 @@ public class Board {
 		this.size = size;
 		this.board = board;
 	}
+
+	public void setSize(int size){
+		this.size = size;
+	}
+
+	public boolean checkRow(char[] row){
+	return true;
+	}
 }
+
