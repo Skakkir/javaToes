@@ -48,6 +48,9 @@ public class Board {
 			return false;
 	}
 
+	public boolean checkHorizontal(){
+		return true;
+	}
 
 }
 
