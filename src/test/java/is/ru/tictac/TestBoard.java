@@ -26,4 +26,10 @@ public class TestBoard{
 		Board b = new Board(3, new char[][] {{'X', '2', '3'}, {'X', '5', '6'}, {'X', '8', '9'}});
 		assertEquals(true, b.checkVertical());
 	}
+
+	@Test
+	public void TestVerticalFalse(){
+		Board b = new Board(3, new char[][] {{'1', '2', '3'}, {'X', '5', '6'}, {'X', '8', '9'}});
+		assertEquals(false, b.checkVertical());
+	}
 }
