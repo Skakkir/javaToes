@@ -45,4 +45,11 @@ public class TestBoard{
 		assertEquals(false, b.checkHorizontal());
 	}
 
+	@Test
+	public void TestDiagonalLeftToRight(){
+		Board b = new Board(3, new char[][] {{'X', '2', '3'}, {'4', 'X', '6'}, {'7', '8', 'X'}});
+		assertEquals(true, b.checkDiagonal());
+	}
+
+	
 }

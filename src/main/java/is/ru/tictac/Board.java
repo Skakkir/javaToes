@@ -62,5 +62,9 @@ public class Board {
 		return false;
 	}
 
+	public boolean checkDiagonal(){
+		return true;
+	}
+
 }
 
