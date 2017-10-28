@@ -39,4 +39,10 @@ public class TestBoard{
 		assertEquals(true, b.checkHorizontal());
 	}
 
+	@Test
+	public void TestHorizontalFalse(){
+		Board b = new Board(3, new char[][] {{'X', '2', 'X'}, {'4', '5', '6'}, {'7', '8', '9'}});
+		assertEquals(false, b.checkHorizontal());
+	}
+
 }

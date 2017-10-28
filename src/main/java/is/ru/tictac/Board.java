@@ -49,7 +49,17 @@ public class Board {
 	}
 
 	public boolean checkHorizontal(){
-		return true;
+		for(int i = 0; i < size; i++){
+			char[] temp = new char[size];
+			for(int j = 0; j < size; j++){
+				temp[j] = board[i][j];
+			}
+			if(checkRow(temp))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
