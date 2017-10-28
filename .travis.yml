@@ -1,9 +1,12 @@
 language: java
-
 jdk:
-  - openjdk8
+- openjdk8
 script:
-  - ./gradlew check
-
+- "./gradlew check"
 before_install:
-  - chmod +x gradlew
+- chmod +x gradlew
+deploy:
+  provider: heroku
+  api_key:
+    secure: qv7SyNlLIEeaElaKcelbK9G/Sii9j8vvNsJoqau5nSxv2OeJsJrRtYry74M7zznbJrVl/XU4IC/3hcQRYLQ0YyOY6S4qEq96TEu1lba61b121/rZHODldv7Yjo2YHgMCh6PxQ3FLfdMnBZ1uaq7eae+MnU457LAMO3YboTaCU1SG0eTuUlaLMsqjPe+i6+sSqNVavQTGdy0oQC+56gBKuXnAjayZna251iVNevSih6gt31Y+4tlGIFcKPJbBkRJ+5eY0kKCdU/5k9nUTgLhG2QnPSFbtL7O+3cTPPwZeu9IgkcnsHeKLbC57oQluebUYCOEVmE9xGcbJ3zfyG3KqXDmSLqYx+EB+cGha1yvwctIAhkAuuZqgzJKWqT+S3MCc3WJYBjkkuzmmvj1p+6IWVLcXtQS4C/oJQ1k/oBEPaBM/fo7WQSm6DBk7HtxZDri2mAUcLz4BCIaqMo/jbqmyYDOCWDCEM7Mj4rCCWvO5R56VaBP5il3HEFO4TaXj/e236aDHA+4fOZ9Ho51q/XejD73VkETOx1D/jWuCBFq0KUJQylrIa3FkvQiM/zGxYpMHxr7ounXVHwfDC7otV/2aT1cmShcwEMkXnsKNYrwlg8O7lnxdhwdBiw50KKlXp+IjmA19V9M86d8Ns1We+PGIcSOYWIUtOZk3d29Mvz5vCms=
+    app: javatoes
