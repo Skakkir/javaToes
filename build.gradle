@@ -1,17 +1,37 @@
+group 'Skakkir'
+version '1.0'
+
 // Apply the java-library plugin to add support for Java Library
 apply plugin: 'java-library'
 apply plugin: 'application'
 
 mainClassName = "is.ru.tictac.TicTac"
 
+sourceCompatibility = 1.8
+
 
 repositories {
+
     // Use jcenter for resolving your dependencies.
     jcenter()
 }
 
 dependencies {
-
+    // Heroku
+    runtime "org.slf4j:slf4j-simple:1.7.12"
+    // Use sparkle framework
+    compile 'com.sparkjava:spark-core:2.3'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
+
+// Stage for Heroku
+task stage {
+    dependsOn build
+}
+// Copy dependancies into a local directory
+task copyToLib(type: Copy) {
+    into "$buildDir/libs"
+    from(configurations.compile)
+}
+stage.dependsOn(copyToLib)
