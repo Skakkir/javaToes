@@ -26,7 +26,12 @@ public class Board {
 	}
 
 	public boolean checkRow(char[] row){
-	return true;
+		for(int i = 0; i < size-1; i++) {
+			if(row[i] != row[i+1]){
+				return false;
+			}
+		}
+		return true;
 	}
 }
 
