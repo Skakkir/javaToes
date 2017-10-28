@@ -8,5 +8,7 @@ before_install:
 deploy:
   provider: heroku
   api_key:
-    secure: "e2f52e88-969b-48e4-9158-8b8eff6c98e7"
-    app: javatoes
+    secure: z4ynW/9w/k1DTMSBdD2LUI1oBozpmE85yamslI7sc9Uuz5aLddBSHJND0Wm18VNSkv9GZFqFQ3UvwFsgx0S4ogmXKe+4YDXuW+DVgFHsR/4Ki6Jr4IJkQwoxdWqPzFP4VqI9iq0fEAhmQtUSoYrs+OEeTtm0GZFI24ItjaKlq5P0XUaOHw7u09EB7tKXsJ/NOZWB12PzIU/qwoggNS6Qu7QEdz2UoGxmi8JFZ23pe24JVLbvVvYrA32KS/l28KPXcWtjMH0TqmHvfbD0aVy+15giSxcTuM7VIGtYJMA3n7ujxaj8EC2VW4iOfkxyekHGlHwHVRrqRE0zReKj/tS8Suur2B510Zp/nVgntfiIv2g62IAc8bTYV/c6TGeGNQ9rI6ORLNwuQyaaxUVf2ImcJeAyrntjXFERNLtFO4aWRhPoinNaPBFOww4ZEegVFbBAV3/tVZRhTmM7iU2npd6mFF2S1IWCrWg+z1psehlsNVV+y9/80YseZCOeuS076hBgf7Bga/3QXHSF7qGvyaqnHGQSTfmNAz7AWG+XfqsCYLjbkA4Bfus2Gav2A2dulis3yIikjz7jEByI4GhbBWuojFEY46sdokk8XbK93aj+NkL5XKwx3Y1FakU/wnqGiAvmKOA6rNAii7nxNRhmo+FfhOH3eWbgQ7oozERSNSdBzto=
+  app: javatoes
+  on:
+    repo: Skakkir/javaToes
