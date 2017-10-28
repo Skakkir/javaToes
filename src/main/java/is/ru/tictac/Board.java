@@ -33,5 +33,11 @@ public class Board {
 		}
 		return true;
 	}
+
+	public boolean checkVertical(){
+		return true;
+	}
+
+
 }
 
