@@ -91,4 +91,12 @@ public class TestBoard{
 		b.setSize(3);
 		assertEquals(false, b.add(42, p));
 	}
+
+		@Test
+	public void TestAddTooOccupiedNumber(){
+		Board b = new Board(3, new char[][] {{'1', '2', '3'}, {'4', 'X', '6'}, {'7', '8', '9'}});
+		Player p = new Player('X');
+		assertEquals(false, b.add(5, p));
+	}
+
 }
