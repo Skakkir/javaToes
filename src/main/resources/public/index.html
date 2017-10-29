@@ -12,9 +12,12 @@
 	<title>Skakkir | JavaToes</title>
 </head>
 <body>
+								    
   	<div class="container">
         <div class="row">
             <div class="col-xs-8">
+                <h3 class="alert alert-success" id="status"> Please Start The Game </h3>
+                <h3 class="alert alert-info">Your turn player: <span id="current-player">X</span></h3>	
                 <div id="bottom">
                     <div id="board-div">
                     <br/><br/>			
@@ -41,13 +44,19 @@
                 </div>		
             </div>
             
+
             <div class="col-xs-4">
                 <div id="bottom">
-                    <div>
-                        <h1 class="alert alert-success"> left div </h3>
-                  </div>
+                    <div id="board-div">
+                    <h1>Welcome</h1>
+                    <p>You can start the game by clicking the cells in the table.</p>
+                    <p>You can reset the game, at any time, by clicking the reset button </p>
+                    <br></br>
+                    </div>						
+                 </div>
             </div>
-        </div>
+
+
     </div>
     <script src="script.js"></script>
 </body>
