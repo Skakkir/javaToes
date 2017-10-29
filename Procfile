@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp build/classes:build/libs/* is.ru.tictac.TicTac
+web: java $JAVA_OPTS -cp build/classes:build/libs/* is.ru.tictac.javaToes
