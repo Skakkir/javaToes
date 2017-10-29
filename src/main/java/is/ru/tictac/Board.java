@@ -86,5 +86,23 @@ public class Board {
 		}
 	}
 
+	public int[] posToCoord(int pos){
+		int[] result = new int[2];
+		int row;
+		int col;
+		if(pos%size == 0){
+			row = (pos / size)-1;
+			col = size-1;
+		}
+		else{
+			row = pos/size;
+			col = (pos%size)-1;
+		}
+
+		result[0] = row;
+		result[1] = col;
+		return result;
+	}
+
 }
 

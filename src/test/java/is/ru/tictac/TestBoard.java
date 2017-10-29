@@ -75,4 +75,13 @@ public class TestBoard{
 		assertEquals(false, b.checkCellOccupied(1, 1));
 	}
 
+	@Test
+	public void TestPosToCoord(){
+		Board b = new Board();
+		assertEquals(1, b.posToCoord(6)[0]);
+		assertEquals(2, b.posToCoord(6)[1]);
+		assertEquals(2, b.posToCoord(8)[0]);
+		assertEquals(1, b.posToCoord(8)[1]);
+	}
+
 }
