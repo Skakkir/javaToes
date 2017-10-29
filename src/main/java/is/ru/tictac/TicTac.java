@@ -35,8 +35,8 @@ public class TicTac {
 		return noWinner;
 	}
 
-	public void addToBoard(int num){
-		board.add(num, currentPlayer);
+	public boolean addToBoard(int num){
+		return board.add(num, currentPlayer);
 	}
 
 	public char togglePlayer(){
@@ -51,19 +51,25 @@ public class TicTac {
 		Scanner scanner = new Scanner(System.in);
 		
 		System.out.println("Welcome to basic javaToe");
-		System.out.println("To exit enter a negative number\n");		
+		System.out.println();
+		game.getCurrBoard().print();
+		System.out.println();
+		System.out.println("To exit enter a negative number\n");
+		System.out.println();
+		System.out.print("\nPlayer " + game.getCurrPlayer() + ", please enter a number:");
 		while((input = scanner.nextInt()) > 0) {
-			game.addToBoard(input);
-			if (game.isWinner() == 'X'){
-				System.out.println("\nWINNER X");				
-				game.newBoard();
-				System.out.println("\nResetting the Board");
-			}else if(game.isWinner() == 'O'){
-				System.out.println("\nWINNER O!");
-				game.newBoard();
-				System.out.println("\nResetting the Board");
+			if(game.addToBoard(input)) {
+				if (game.isWinner() == 'X'){
+					System.out.println("\nWINNER X");				
+					game.newBoard();
+					System.out.println("\nResetting the Board");
+				}else if(game.isWinner() == 'O'){
+					System.out.println("\nWINNER O!");
+					game.newBoard();
+					System.out.println("\nResetting the Board");
+				}
+				game.togglePlayer();
 			}
-			game.togglePlayer();
 			System.out.println();							
 			game.getCurrBoard().print();
 			System.out.print("\nPlayer " + game.getCurrPlayer() + ", please enter a number:");
