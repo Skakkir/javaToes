@@ -83,6 +83,7 @@ $(document).ready(function() {
   function checkVictory(){
     $.ajax({
       url: "/hasWon",
+      dataType: 'text',      
       type: "post", 
       success: function(data) {  
         switch (data) {

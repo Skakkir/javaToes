@@ -15,6 +15,7 @@ public class javaToes implements SparkApplication {
         javaToes.init();
     }
 
+    // gets a port for our host
     static int getPort() {
     	ProcessBuilder newProcess = new ProcessBuilder();
 	    if (newProcess.environment().get("PORT") != null) {
@@ -22,7 +23,7 @@ public class javaToes implements SparkApplication {
     	}
      	return 4567;
      }
-
+    // will initializes a  Spark context for the web app
     public void init(){
         post(
           "/", 
@@ -32,7 +33,8 @@ public class javaToes implements SparkApplication {
             toeJava.addToBoard(Integer.parseInt(request.queryParams("id")));
             return currPlayer;
         });
-
+        
+        // will reset the board, so that we can play again
         post(
             "/newBoard", 
             (request, response) -> {
@@ -41,6 +43,7 @@ public class javaToes implements SparkApplication {
               return response;
           });
           
+          // check if there is a winner
           post(
             "/hasWon", 
             (request, response) -> {
