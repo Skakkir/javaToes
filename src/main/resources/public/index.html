@@ -14,24 +14,29 @@
 <body>
   	<div class="container">
         <div class="row">
-            <div class="col-xs-10">
+                <div class="col-xs-8">
+						<div id="bottom">
+							<div id="board-div">
+                                <h1 id="status"></h1>
+                                <button id="ajax">Ajax</button>
+							</div>
+						</div>		
+					</div>
+            <div class="col-xs-4">
                 <div id="bottom">
-                    <div>
-                    <h1 class="alert alert-success"> right div </h1>
-                    <button id="ajax">click for ajax</button>
-                        <h1 id="status">test me for ajax</h1>
-                      
+                        <div id="board-div">
+                        <h1>Welcome</h1>
+                        <p>You can start the game by clicking the cells in the table.</p>                        
+                        <p>You can reset the game, at any time, by clicking the reset button </p>
+                        <br></br>
+                        <br></br>
+                        <p id="game-over"></p>
+                        </div>
+                        <br/><br/>							
+                        <button class="btn">Reset</button>
+                        <br/><br/>							
                     </div>
-                    <br/><br/>																
-                  </div>		
-            </div>
-            <div class="col-xs-2">
-                <div id="bottom">
-                    <div>
-                        <h1 class="alert alert-success"> left div </h1>
-                  </div>
-            </div>
-        </div>
+             </div>
     </div>
     <script src="script.js"></script>
 </body>
