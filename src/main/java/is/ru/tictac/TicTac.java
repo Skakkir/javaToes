@@ -10,24 +10,27 @@ public class TicTac {
 	private Board board;
 	private Player currentPlayer;
 	private char noWinner;
-
+	// Constructor, makes an empty board.
 	public TicTac(){
 		noWinner = 'N';	
 		newBoard();
 	}
-	
+	// Returns the symbol of the current player playing.
 	public char getCurrPlayer(){
 		return currentPlayer.getSymbol();
 	}
+	// Returns the board.
 	public Board getCurrBoard(){
 		return board;
 	}
 
+	// Makes an new empty board.
 	public void newBoard(){
 		board = new Board();
 		currentPlayer = new Player('X');
 	}
 
+	// Returns the symbol of the player that won, if there is no winner it returns noWinner.
 	public char isWinner(){
 		if (board.checkWinner(currentPlayer)){
 			return currentPlayer.getSymbol();
@@ -35,18 +38,23 @@ public class TicTac {
 		return noWinner;
 	}
 
+	//returns true if it was successful to add to the board.
 	public boolean addToBoard(int num){
 		return board.add(num, currentPlayer);
 	}
 
+	//returns true if the board is full.
 	public boolean isDraw() {
 		return board.checkFullBoard();
 	}
+
+	// Returns the symbol of the player that has the next turn.
 	public char togglePlayer(){
 		currentPlayer.toggleMySymbol();
 		return currentPlayer.getSymbol();
 	}
-
+	// Runs the game while players enter a non negative number, resets if they game is won or a draw. Keeps asking players for
+	// numbers to put ther symbols in and toogles the players after each round.
 	public static void main(String[] args) {
 		TicTac game = new TicTac();
 
