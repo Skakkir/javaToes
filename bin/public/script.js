@@ -1,17 +1,19 @@
 $(document).ready(function() {  
-
-  $.ajax({
-    url: "/",
-    dataType: 'text',
-    type: "post", 
-    data: "id=" + id,
-    success: function(data) {        
-      $('#status').html('Request. Success. First route.').attr('class',
-      'alert alert-success');
-    },
-    error: function(data) {
-        $('#status').html('Error! Request failed.').attr('class',
-        'alert alert-warning');
-    }
+  
+  $("#ajax").on('click', function(){
+    alert('success');
+    $.ajax({
+      url: "/",
+      dataType: 'text',
+      type: "post", 
+      success: function(data) {        
+        $('#status').html(data).attr('class',
+        'alert alert-success');
+      },
+      error: function(data) {
+          $('#status').html('Error! Request failed.').attr('class',
+          'alert alert-warning');
+      }
+    });
   });
 });
