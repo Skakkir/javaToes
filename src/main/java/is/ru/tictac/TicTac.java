@@ -47,21 +47,26 @@ public class TicTac {
 	public static void main(String[] args) {
 		TicTac game = new TicTac();
 
-		int input;
+		int input = 0;
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("Welcome to basic javaToe");		
+		System.out.println("Welcome to basic javaToe");
+		System.out.println("To exit enter a negative number\n");		
 		while((input = scanner.nextInt()) > 0) {
 			game.addToBoard(input);
 			if (game.isWinner() == 'X'){
-				System.out.println("WINNER X");				
-				break;
+				System.out.println("\nWINNER X");				
+				game.newBoard();
+				System.out.println("\nResetting the Board");
 			}else if(game.isWinner() == 'O'){
-				System.out.println("WINNER O!");
-				break;
+				System.out.println("\nWINNER O!");
+				game.newBoard();
+				System.out.println("\nResetting the Board");
 			}
 			game.togglePlayer();
+			System.out.println();							
 			game.getCurrBoard().print();
+			System.out.print("\nPlayer " + game.getCurrPlayer() + ", please enter a number:");
 		}
  	}
 }
