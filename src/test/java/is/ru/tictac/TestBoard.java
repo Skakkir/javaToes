@@ -104,4 +104,14 @@ public class TestBoard{
 		assertEquals('X', b.getBoard()[0][2]);
 	}
 
+	@Test
+	public void TestCheckFullFalse(){
+		Board b = new Board();
+		Player p = new Player('X');
+		for(int i = 1; i <= 8; i++){
+			b.add(i, p);
+		}
+		assertEquals(false, b.checkFullBoard());
+	}
+
 }

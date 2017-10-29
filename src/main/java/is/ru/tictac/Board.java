@@ -120,5 +120,9 @@ public class Board {
 			return true;
 		}
 	}
+
+	public boolean checkFullBoard(){
+		return false;
+	}
 }
 
