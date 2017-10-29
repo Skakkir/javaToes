@@ -6,7 +6,8 @@ import spark.servlet.SparkApplication;
 
 public class javaToes implements SparkApplication {
 
-
+    private final TicTac toeJava = new TicTac();
+    
         public static void main(String[] args) {
         staticFileLocation("/public");
         SparkApplication javaToes = new javaToes();
@@ -26,7 +27,10 @@ public class javaToes implements SparkApplication {
         post(
           "/", 
           (request, response) -> {
-            return "X";
+            toeJava.togglePlayer();
+            char currPlayer = toeJava.getCurrPlayer();
+            toeJava.addToBoard(Integer.parseInt(request.queryParams("id")));
+            return currPlayer;
         });
 
     }        

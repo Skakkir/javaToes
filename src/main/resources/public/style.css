@@ -5,9 +5,7 @@ html {
 body {
 	text-align: center;
 	background: radial-gradient(#0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-	
 }
-
 
 td {
 	width: 100px;
@@ -32,6 +30,7 @@ p {
 	text-align: center;
 	margin: auto;
 }
+
 .cell:hover {
 	background: #125464;
 	text-align: center;

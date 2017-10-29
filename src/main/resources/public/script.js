@@ -12,12 +12,11 @@ $(document).ready(function() {
         type: "post", 
         data: "id=" + id,
         success: function(data) {        
-            
+          
          document.getElementById("cID"+id).innerHTML = data;
         },
-        error: function(data) {
+         error: function(data) {
   
-          
         }
       });
     });  
