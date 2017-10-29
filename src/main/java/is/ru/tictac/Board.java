@@ -76,5 +76,10 @@ public class Board {
 			return false;
 		}
 	}
+
+	public boolean checkCellOccupied(int x, int y){
+		return true;
+	}
+
 }
 

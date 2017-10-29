@@ -63,5 +63,12 @@ public class TestBoard{
 		assertEquals(false, b.checkDiagonal());
 	}
 
+	@Test
+	public void TestCellIsOccupiedTrue(){
+		Board b = new Board(3, new char[][] {{'1', '2', '3'}, {'4', 'X', '6'}, {'7', '8', '9'}});
+		assertEquals(true, b.checkCellOccupied(1, 1));
+	}
+
 	
+
 }
