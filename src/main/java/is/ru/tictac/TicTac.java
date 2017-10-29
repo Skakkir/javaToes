@@ -11,10 +11,21 @@ public class TicTac {
 
 	public TicTac(){
 		noWinner = 'N';	
+		newBoard();
+	}
+	
+	public char getCurrPlayer(){
+		return currentPlayer.getSymbol();
+	}
+	public Board getCurrBoard(){
+		return board;
+	}
+
+	public void newBoard(){
 		board = new Board();
 		currentPlayer = new Player('X');
 	}
-	
+
 	public char isWinner(){
 		if (board.checkWinner(currentPlayer)){
 			return currentPlayer.getSymbol();
