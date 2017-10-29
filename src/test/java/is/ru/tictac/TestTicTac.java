@@ -48,8 +48,5 @@ public class TestTicTac{
           assertEquals(false, board.checkCellOccupied(i, j));          
         }
       }
-       
-
   }
-
 }
