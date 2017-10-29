@@ -78,7 +78,12 @@ public class Board {
 	}
 
 	public boolean checkCellOccupied(int x, int y){
-		return true;
+		if(board[x][y] == 'X' || board[x][y] == 'O'){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 }

@@ -69,6 +69,10 @@ public class TestBoard{
 		assertEquals(true, b.checkCellOccupied(1, 1));
 	}
 
-	
+	@Test
+	public void TestCellIsOccupiedFalse(){
+		Board b = new Board(3, new char[][] {{'O', 'X', 'O'}, {'X', '5', 'O'}, {'X', 'X', 'X'}});
+		assertEquals(false, b.checkCellOccupied(1, 1));
+	}
 
 }
