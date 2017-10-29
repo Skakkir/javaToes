@@ -1,12 +1,14 @@
 package is.ru.tictac;
 public class Board {
 
-	private int size = 3;
+	private int size = 3; 
 	private char[][] board;
 	private int boardCount = 0;
 
 	Board(){
+		// initialise the board as sizexsize or 3x3
 		board = new char[size][size];
+		// Number all the cells in the board from 1 - 9
 		char temp = '1';
 		for (int i = 0; i < size; i++){
 			for (int j = 0; j < size; j++) {
@@ -20,11 +22,11 @@ public class Board {
 		this.size = size;
 		this.board = board;
 	}
-
+	//returns the state of the board.
 	public char[][] getBoard(){
 		return board;
 	}
-
+	//returns true if all the cells in that row contain the same symbol, otherwise it returns false
 	public boolean checkRow(char[] row){
 		for(int i = 0; i < size-1; i++) {
 			if(row[i] != row[i+1]){
@@ -33,7 +35,7 @@ public class Board {
 		}
 		return true;
 	}
-
+	//returns true if all the cells in that vertical line contain the same symbol, otherwise it returns false.
 	public boolean checkVertical(){
 		for(int i = 0; i < size; i++){
 			char[] temp = new char[size];
@@ -48,6 +50,7 @@ public class Board {
 			return false;
 	}
 
+	//returns true if all the cells in that horizontal line contain the same symbo, otherwise it returns false.
 	public boolean checkHorizontal(){
 		for(int i = 0; i < size; i++){
 			char[] temp = new char[size];
@@ -62,6 +65,7 @@ public class Board {
 		return false;
 	}
 
+	//returns true if all the celss in thit diagonal line contain the same symbol, otherwise it returns false.
 	public boolean checkDiagonal(){
 		char[] tempL = new char[size];
 		char[] tempR = new char[size];
@@ -78,6 +82,7 @@ public class Board {
 		}
 	}
 
+	// Returns true if the cell that is looked for contains eitheir an X or an O, otherwise it returns false. 
 	public boolean checkCellOccupied(int x, int y){
 		if(board[x][y] == 'X' || board[x][y] == 'O'){
 			return true;
@@ -87,6 +92,7 @@ public class Board {
 		}
 	}
 
+	// Returns an array of integers, finds the coordinates of the player.
 	public int[] posToCoord(int pos){
 		int[] result = new int[2];
 		int row;
@@ -105,7 +111,9 @@ public class Board {
 		return result;
 	}
 
-
+	// Returns false if the input is  out of range from the board (lower than 0 or bigger then the size of the board) and
+	// if the cell that is chosen is occupied(has an X or an O in it), otherwise it returns true and puts the symbol corresponding to 
+	// the player in that cell, and puts boardcount up by 1.
 	public boolean add(int pos, Player p){
 		int[] cords = posToCoord(pos);
 		if(pos < 0 || pos > size*size){
@@ -123,6 +131,7 @@ public class Board {
 		}
 	}
 
+	// Returns true if boardCount is the same as the size of the board, else it returns false.
 	public boolean checkFullBoard(){
 		if(boardCount == (size*size)){
 			return true;
@@ -132,6 +141,7 @@ public class Board {
 		}
 	}
 
+	// Returns true if either Vertical, Horizontal or Diagonal lines have the same symbol in them, X or O, otherwise it returns false. 
 	public boolean checkWinner(Player p){
 
 		if(checkVertical() || checkHorizontal() || checkDiagonal()){
@@ -142,6 +152,7 @@ public class Board {
 		}
 	}
 
+	// Sets the board to its original state, all cells numbered from 1 - size.
 	public void reset(){
 		char temp = '1';
 		for (int i = 0; i < size; i++){
@@ -151,7 +162,7 @@ public class Board {
 			}
 		}
 	}
-
+	// prints out the board.
 	public void print(){
 
 		String seperartor = "-";
