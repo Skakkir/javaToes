@@ -151,5 +151,25 @@ public class Board {
 			}
 		}
 	}
+
+	public void print(){
+
+		String seperartor = "-";
+		for(int i = 0; i < size; i++){
+			seperartor += "----";
+		}
+
+		System.out.println(seperartor);
+
+		for(int i = 0; i < size; i++){
+			System.out.print("| ");
+			for (int j = 0; j < 3; j++){
+				System.out.print(board[i][j] + " | ");
+			}
+			System.out.println();
+			System.out.println(seperartor);
+		}
+	}
+
 }
 
