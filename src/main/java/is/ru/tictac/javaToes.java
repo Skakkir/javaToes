@@ -26,7 +26,7 @@ public class javaToes implements SparkApplication {
         post(
           "/", 
           (request, response) -> {
-            return "Hello World";
+            return "X";
         });
 
     }        

@@ -1,19 +1,24 @@
 $(document).ready(function() {  
   
-  $("#ajax").on('click', function(){
-    alert('success');
-    $.ajax({
-      url: "/",
-      dataType: 'text',
-      type: "post", 
-      success: function(data) {        
-        $('#status').html(data).attr('class',
-        'alert alert-success');
-      },
-      error: function(data) {
-          $('#status').html('Error! Request failed.').attr('class',
-          'alert alert-warning');
-      }
-    });
+  
+    $(".cell").on('click', function(){
+      
+      alert('test');
+      var id = this.id.slice(-1);
+  
+      $.ajax({
+        url: "/",
+        dataType: 'text',
+        type: "post", 
+        data: "id=" + id,
+        success: function(data) {        
+            
+         document.getElementById("cID"+id).innerHTML = data;
+        },
+        error: function(data) {
+  
+          
+        }
+      });
+    });  
   });
-});
