@@ -5,7 +5,6 @@ public class Board {
 	private char[][] board;
 
 	Board(){
-
 		board = new char[size][size];
 		char temp = '1';
 		for (int i = 0; i < size; i++){
@@ -63,8 +62,19 @@ public class Board {
 	}
 
 	public boolean checkDiagonal(){
-		return true;
-	}
+		char[] tempL = new char[size];
+		char[] tempR = new char[size];
 
+		for(int i = 0; i < size; i++){
+			tempL[i] = board[i][i];
+			tempR[i] = board[i][size-i-1];
+		}
+		if(checkRow(tempL)||checkRow(tempR)){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 }
 

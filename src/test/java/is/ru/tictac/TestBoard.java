@@ -56,4 +56,12 @@ public class TestBoard{
 		Board b = new Board(3, new char[][] {{'1', '2', 'X'}, {'4', 'X', '6'}, {'X', '8', '9'}});
 		assertEquals(true, b.checkDiagonal());
 	}
+
+	@Test
+	public void TestDiagonalFalse(){
+		Board b = new Board(3, new char[][] {{'1', '2', 'X'}, {'4', '5', '6'}, {'X', '8', '9'}});
+		assertEquals(false, b.checkDiagonal());
+	}
+
+	
 }
