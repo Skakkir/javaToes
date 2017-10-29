@@ -58,4 +58,21 @@ public class TestTicTac{
     assertEquals(false, game.addToBoard(1));
   }
 
+  @Test
+  public void checkDraw(){
+    TicTac game = new TicTac();
+    game.addToBoard(1);
+    game.addToBoard(2);
+    game.addToBoard(3);
+    game.addToBoard(4);
+    assertEquals(false, game.isDraw());
+    game.addToBoard(5);
+    game.addToBoard(6);
+    assertEquals(false, game.isDraw());
+    game.addToBoard(7);
+    game.addToBoard(8);
+    game.addToBoard(9);
+    assertEquals(true, game.isDraw());
+  }
+
 }

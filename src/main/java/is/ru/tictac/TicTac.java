@@ -39,6 +39,9 @@ public class TicTac {
 		return board.add(num, currentPlayer);
 	}
 
+	public boolean isDraw() {
+		return board.checkFullBoard();
+	}
 	public char togglePlayer(){
 		currentPlayer.toggleMySymbol();
 		return currentPlayer.getSymbol();
@@ -68,7 +71,14 @@ public class TicTac {
 					game.newBoard();
 					System.out.println("\nResetting the Board");
 				}
-				game.togglePlayer();
+				else if (game.isDraw()) {
+					System.out.println("\nIT'S A DRAW!");
+					game.newBoard();
+					System.out.println("\nResetting the Board");
+				}
+				else {
+					game.togglePlayer();
+				}
 			}
 			System.out.println();							
 			game.getCurrBoard().print();
