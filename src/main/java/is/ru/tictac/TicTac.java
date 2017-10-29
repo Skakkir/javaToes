@@ -5,9 +5,23 @@ import java.util.Scanner;
 
 public class TicTac {
 
-	private Board board = new Board();
-	private Player currentPlayer = new Player('X');
+	private Board board;
+	private Player currentPlayer;
+	private char noWinner;
+
+	public TicTac(){
+		noWinner = 'N';	
+		board = new Board();
+		currentPlayer = new Player('X');
+	}
 	
+	public char isWinner(){
+		if (board.checkWinner(currentPlayer)){
+			return currentPlayer.getSymbol();
+		}
+		return noWinner;
+	}
+
 	public void addToBoard(int num){
 		board.add(num, currentPlayer);
 	}
@@ -19,12 +33,18 @@ public class TicTac {
 
 	public static void main(String[] args) {
 		TicTac game = new TicTac();
-		game.addToBoard(2);
+
+		game.addToBoard(1);
+		System.out.println(game.togglePlayer());
+		game.addToBoard(4);
+		System.out.println(game.togglePlayer());
 		game.addToBoard(3);
-		game.addToBoard(6);
 		System.out.println(game.togglePlayer());
-		game.addToBoard(7);
+		game.addToBoard(5);
 		System.out.println(game.togglePlayer());
+		game.addToBoard(2);
+		System.out.println("Winner: " + game.isWinner());
+	
 		game.board.print();
  	}
 

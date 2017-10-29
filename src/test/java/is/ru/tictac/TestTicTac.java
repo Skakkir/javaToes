@@ -7,7 +7,7 @@ import org.junit.Test;
 public class TestTicTac{
 
 	@Test
-	public void TestAddToBoard(){
+	public void testAddToBoard(){
 	  	TicTac game = new TicTac();
       game.addToBoard(2);
       Board board = new Board(3, new char[][] {{'1', 'X', '3'}, {'4', '5', '6'}, {'7', '8', '9'}});
@@ -15,10 +15,23 @@ public class TestTicTac{
    }
 
    @Test
-   public void TestToggle(){
+   public void testToggle(){
        TicTac game = new TicTac();
        assertEquals('O', game.togglePlayer());
        assertEquals('X', game.togglePlayer());
     }
-
+    @Test
+    public void testWin(){
+        TicTac game = new TicTac();
+        game.addToBoard(1); // X inputs
+        game.togglePlayer(); 
+        game.addToBoard(4); // O inputs
+        game.togglePlayer(); 
+        game.addToBoard(2); // X inputs
+        game.togglePlayer(); 
+        game.addToBoard(5); // O inputs
+        game.togglePlayer(); 
+        game.addToBoard(3); // X inputs
+        assertEquals('X', game.isWinner());
+      }
 }
