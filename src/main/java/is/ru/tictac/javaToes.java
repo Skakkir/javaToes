@@ -29,9 +29,17 @@ public class javaToes implements SparkApplication {
           (request, response) -> {
             toeJava.togglePlayer();
             char currPlayer = toeJava.getCurrPlayer();
-            toeJava.addToBoard(Integer.parseInt(request.queryParams("id")));
             return currPlayer;
         });
+
+        post(
+            "/newBoard", 
+            (request, response) -> {
+              toeJava.newBoard();
+              response.status(200);
+              return response;
+          });
+          
 
     }        
 }
