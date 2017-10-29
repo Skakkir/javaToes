@@ -8,7 +8,6 @@ public class TestBoard{
 	@Test
 	public void TestCheckRowTrue(){
 		Board b = new Board();
-		b.setSize(3);
 		char[] row = {'x', 'x', 'x'};
 		assertEquals(true, b.checkRow(row));
 	}
@@ -16,7 +15,6 @@ public class TestBoard{
 	@Test
 	public void TestCheckRowFalse(){
 		Board b = new Board();
-		b.setSize(3);
 		char[] row = {'x', 'o', 'x'};
 		assertEquals(false, b.checkRow(row));	
 	}
@@ -88,15 +86,22 @@ public class TestBoard{
 	public void TestAddTooLargeNumber(){
 		Board b = new Board();
 		Player p = new Player('X');
-		b.setSize(3);
 		assertEquals(false, b.add(42, p));
 	}
 
-		@Test
+	@Test
 	public void TestAddTooOccupiedNumber(){
 		Board b = new Board(3, new char[][] {{'1', '2', '3'}, {'4', 'X', '6'}, {'7', '8', '9'}});
 		Player p = new Player('X');
 		assertEquals(false, b.add(5, p));
+	}
+
+	@Test
+	public void TestAddTrue(){
+		Board b = new Board(3, new char[][] {{'1', '2', '3'}, {'4', 'X', '6'}, {'7', '8', '9'}});
+		Player p = new Player('X');
+		assertEquals(true, b.add(3, p));
+		assertEquals('X', b.getBoard()[0][2]);
 	}
 
 }

@@ -20,8 +20,8 @@ public class Board {
 		this.board = board;
 	}
 
-	public void setSize(int size){
-		this.size = size;
+	public char[][] getBoard(){
+		return board;
 	}
 
 	public boolean checkRow(char[] row){
@@ -104,8 +104,21 @@ public class Board {
 		return result;
 	}
 
+
 	public boolean add(int pos, Player p){
-		return false;
+		int[] cords = posToCoord(pos);
+		if(pos < 0 || pos > size*size){
+			System.out.println("select a number between: 0 and " + size*size);
+			return false;
+		}
+		else if(checkCellOccupied(cords[0], cords[1])){
+			System.out.println("this cell is occupied!!!!");
+			return false;
+		}
+		else{
+			board[cords[0]][cords[1]] = p.getSymbol();
+			return true;
+		}
 	}
 }
 
