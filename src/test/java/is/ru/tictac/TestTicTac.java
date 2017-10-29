@@ -48,8 +48,6 @@ public class TestTicTac{
           assertEquals(false, board.checkCellOccupied(i, j));          
         }
       }
-<<<<<<< HEAD
-=======
   }
 
   @Test
@@ -75,6 +73,5 @@ public class TestTicTac{
     game.addToBoard(8);
     game.addToBoard(9);
     assertEquals(true, game.isDraw());
->>>>>>> 7d4e606abf9cde670c3b05232e61ab008c43a28f
   }
 }
