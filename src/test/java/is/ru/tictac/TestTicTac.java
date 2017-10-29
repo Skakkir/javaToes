@@ -74,5 +74,4 @@ public class TestTicTac{
     game.addToBoard(9);
     assertEquals(true, game.isDraw());
   }
-
 }
