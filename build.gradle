@@ -5,7 +5,7 @@ version '1.0'
 apply plugin: 'java-library'
 apply plugin: 'application'
 
-mainClassName = "is.ru.tictac.TicTac"
+mainClassName = "is.ru.tictac.javaToes"
 
 sourceCompatibility = 1.8
 
