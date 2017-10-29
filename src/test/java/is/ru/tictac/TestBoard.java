@@ -131,4 +131,10 @@ public class TestBoard{
 		assertEquals(false, b.checkWinner(p));
 	}
 
+	@Test
+	public void testCheckWinnerTrue(){
+		Board b = new Board(3, new char[][] {{'X', '2', '3'}, {'4', 'X', '6'}, {'7', '8', 'X'}});
+		Player p = new Player('X');
+		assertEquals(true, b.checkWinner(p));
+	}
 }

@@ -133,7 +133,13 @@ public class Board {
 	}
 
 	public boolean checkWinner(Player p){
-		return false;
+
+		if(checkVertical() || checkHorizontal() || checkDiagonal()){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 }
 
