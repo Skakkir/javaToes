@@ -12,5 +12,12 @@ public class Player {
 	public char getSymbol(){
 		return symbol;
 	}
-	
+
+	public void toggleMySymbol(){
+		if (this.symbol == 'X'){
+			this.symbol = 'O';
+		}else {
+			this.symbol = 'X';
+		}
+	}
 }

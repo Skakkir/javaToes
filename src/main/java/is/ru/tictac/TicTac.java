@@ -12,12 +12,19 @@ public class TicTac {
 		board.add(num, currentPlayer);
 	}
 
+	public char togglePlayer(){
+		currentPlayer.toggleMySymbol();
+		return currentPlayer.getSymbol();
+	}
+
 	public static void main(String[] args) {
 		TicTac game = new TicTac();
 		game.addToBoard(2);
 		game.addToBoard(3);
 		game.addToBoard(6);
-		
+		System.out.println(game.togglePlayer());
+		game.addToBoard(7);
+		System.out.println(game.togglePlayer());
 		game.board.print();
  	}
 
