@@ -29,6 +29,7 @@ public class javaToes implements SparkApplication {
           (request, response) -> {
             toeJava.togglePlayer();
             char currPlayer = toeJava.getCurrPlayer();
+            toeJava.addToBoard(Integer.parseInt(request.queryParams("id")));
             return currPlayer;
         });
 
@@ -40,6 +41,11 @@ public class javaToes implements SparkApplication {
               return response;
           });
           
+          post(
+            "/hasWon", 
+            (request, response) -> {
+             return toeJava.isWinner();
+          });
 
     }        
 }

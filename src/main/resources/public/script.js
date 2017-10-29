@@ -1,12 +1,10 @@
 $(document).ready(function() {  
-  
   // Whenever we click a cell in the table we trigger event. 
   $(".cell").on('click', function(){
-    alert('test');
     var id = this.id.slice(-1);
     var cellValue = document.getElementById(this.id).innerHTML;
-    
-    // Validate move
+
+    // Validates current players move
     $(function(){
       switch (cellValue) {
         case 'X':
@@ -25,7 +23,27 @@ $(document).ready(function() {
       }      
     })
 
-    // place mark into the cell
+    // Resets the board
+    $(".btn").on('click', function reset (){
+      for (var i = 1; i < 10; i++){
+        document.getElementById('cID'+i).innerHTML = "";        
+      }
+      $("#game-over").replaceWith("<p id='game-over'></p>");   
+      $.ajax({
+        url: "/newBoard",
+        type: "post", 
+        success: function(data) {        
+          $('#status').html('New Game!').attr('class', 
+          'alert alert-success');
+        },
+        error: function(data) {
+            $('#status').html('Error! Request failed.').attr('class',
+            'alert alert-warning');
+        }
+      });
+    }); 
+
+    // Place a mark into the cell
     function setMark(){
       $.ajax({
         url: "/",
@@ -35,6 +53,7 @@ $(document).ready(function() {
         success: function(data) {        
           togglePlayerStatus(data);
           document.getElementById("cID"+id).innerHTML = data;
+          checkVictory();
         },
          error: function(data) {
           $('#status').html('Error! Request failed.').attr('class',
@@ -60,23 +79,29 @@ $(document).ready(function() {
     }
   });  
 
-  // Reset the board
-  $(".btn").on('click', function(){
-    for (var i = 1; i < 10; i++){
-      document.getElementById('cID'+i).innerHTML = "";        
-    }
-    $("#game-over").replaceWith("<p id='game-over'></p>");   
+  // Check for victory
+  function checkVictory(){
     $.ajax({
-      url: "/newBoard",
+      url: "/hasWon",
       type: "post", 
-      success: function(data) {        
-        $('#status').html('New Game!').attr('class', 
-        'alert alert-success');
+      success: function(data) {  
+        switch (data) {
+          case 'X':
+            $('#game-over')
+            .html('We have a winner, continue your game or reset.');              
+            break;
+          case 'O':
+            $('#game-over')
+            .html('We have a winner, continue your game or reset.');              
+            break;
+          default:
+            break;
+        }
       },
       error: function(data) {
-          $('#status').html('Error! Request failed.').attr('class',
-          'alert alert-warning');
+        $('#status').html('Error has occured!').attr('class',
+        'alert alert-warning');    
       }
-   });
-  });  
+    });
+  }
 });
