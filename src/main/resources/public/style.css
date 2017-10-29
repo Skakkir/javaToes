@@ -11,7 +11,9 @@ td {
 	font-size: 16px;
 	background-color: #EEEEEE;
 }
-
+#board-div {
+	color: #A349A4;
+}
 p {
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	font-size: 18px;
