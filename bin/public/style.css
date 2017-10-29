@@ -1,4 +1,33 @@
-html {
-	background: #3B84A3;
+body {
+	text-align: center;
+	background: radial-gradient(#473343 0%, #54435e 51%, #534c6d 75%);
 }
 
+td {
+	width: 100px;
+	height: 100px;
+	text-align: center;
+	border: 2px solid #ccc;
+	font-size: 16px;
+	background-color: #EEEEEE;
+}
+
+p {
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 18px;
+}
+
+.cell {
+	width:150px;
+	height:150px;
+	border: 5px solid rgb(37, 17, 85);
+	background: rgb(160, 153, 153);
+	font-size: 46pt;
+	text-align: center;
+	margin: auto;
+}
+
+.cell:hover {
+	background: #4d395e;
+	text-align: center;
+}
