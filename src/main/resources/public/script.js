@@ -88,12 +88,14 @@ $(document).ready(function() {
       success: function(data) {  
         switch (data) {
           case 'X':
-            $('#game-over')
-            .html('We have a winner, continue your game or reset.');              
+          $('#game-over')
+          .html('Player X is a winner, continue your game or reset.').attr('class',
+          'alert alert-warning');            
             break;
           case 'O':
-            $('#game-over')
-            .html('We have a winner, continue your game or reset.');              
+          $('#game-over')
+          .html('Player O is a winner, continue your game or reset.').attr('class',
+          'alert alert-warning');            
             break;
           default:
             break;
