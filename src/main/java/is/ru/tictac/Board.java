@@ -131,5 +131,9 @@ public class Board {
 			return false;
 		}
 	}
+
+	public boolean checkWinner(Player p){
+		return false;
+	}
 }
 
