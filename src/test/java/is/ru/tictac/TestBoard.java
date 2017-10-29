@@ -114,4 +114,15 @@ public class TestBoard{
 		assertEquals(false, b.checkFullBoard());
 	}
 
+	@Test
+	public void TestCheckFullTrue(){
+		Board b = new Board();
+		Player p = new Player('X');
+		for(int i = 1; i <= 9; i++){
+			b.add(i, p);
+		}
+		assertEquals(true, b.checkFullBoard());
+	}
+
+
 }

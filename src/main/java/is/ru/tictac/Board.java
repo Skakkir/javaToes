@@ -3,6 +3,7 @@ public class Board {
 
 	private int size = 3;
 	private char[][] board;
+	private int boardCount = 0;
 
 	Board(){
 		board = new char[size][size];
@@ -116,13 +117,19 @@ public class Board {
 			return false;
 		}
 		else{
+			boardCount++;
 			board[cords[0]][cords[1]] = p.getSymbol();
 			return true;
 		}
 	}
 
 	public boolean checkFullBoard(){
-		return false;
+		if(boardCount == (size*size)){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 }
 
