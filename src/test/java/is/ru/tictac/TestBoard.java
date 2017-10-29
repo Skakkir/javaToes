@@ -84,4 +84,11 @@ public class TestBoard{
 		assertEquals(1, b.posToCoord(8)[1]);
 	}
 
+	@Test
+	public void TestAddTooLargeNumber(){
+		Board b = new Board();
+		Player p = new Player('X');
+		b.setSize(3);
+		assertEquals(false, b.add(42, p));
+	}
 }

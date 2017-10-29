@@ -104,5 +104,8 @@ public class Board {
 		return result;
 	}
 
+	public boolean add(int pos, Player p){
+		return false;
+	}
 }
 
