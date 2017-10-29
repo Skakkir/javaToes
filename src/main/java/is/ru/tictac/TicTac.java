@@ -2,6 +2,8 @@ package is.ru.tictac;
 import java.io.IOException;
 import java.util.Scanner;
 
+import org.eclipse.jetty.util.ReadLineInputStream;
+
 
 public class TicTac {
 
@@ -45,18 +47,21 @@ public class TicTac {
 	public static void main(String[] args) {
 		TicTac game = new TicTac();
 
-		game.addToBoard(1);
-		System.out.println(game.togglePlayer());
-		game.addToBoard(4);
-		System.out.println(game.togglePlayer());
-		game.addToBoard(3);
-		System.out.println(game.togglePlayer());
-		game.addToBoard(5);
-		System.out.println(game.togglePlayer());
-		game.addToBoard(2);
-		System.out.println("Winner: " + game.isWinner());
-	
-		game.board.print();
+		int input;
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Welcome to basic javaToe");		
+		while((input = scanner.nextInt()) > 0) {
+			game.addToBoard(input);
+			if (game.isWinner() == 'X'){
+				System.out.println("WINNER X");				
+				break;
+			}else if(game.isWinner() == 'O'){
+				System.out.println("WINNER O!");
+				break;
+			}
+			game.togglePlayer();
+			game.getCurrBoard().print();
+		}
  	}
-
 }
