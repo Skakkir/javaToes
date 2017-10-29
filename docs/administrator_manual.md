@@ -16,7 +16,7 @@ To get the program up and running. The administrator should run the following co
 
  - Shell: Navigate to directory you want the program to be located in
  - Shell: git clone  https://github.com/Skakkir/javaToes.git
- - Shell: gradle run
+ - Shell: gradle run (If you decide to use localhost)
  - Put the following url in browser of your choice in your computer: http://localhost:4567/
 
 
