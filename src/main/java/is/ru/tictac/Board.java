@@ -141,5 +141,15 @@ public class Board {
 			return false;
 		}
 	}
+
+	public void reset(){
+		char temp = '1';
+		for (int i = 0; i < size; i++){
+			for (int j = 0; j < size; j++) {
+				board[i][j] = temp;
+				temp++;
+			}
+		}
+	}
 }
 
